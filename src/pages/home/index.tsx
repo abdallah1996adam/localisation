@@ -12,6 +12,12 @@ const Home: React.FC = () => {
     (state: GlobalState) => state.keys
   );
 
+  React.useEffect(() => {
+    localStorage.setItem("keys", JSON.stringify(keys));
+  }, [keys]);
+
+ 
+
   const addNewKey = () => {
     createKey();
   };

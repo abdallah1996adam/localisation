@@ -5,17 +5,17 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 interface OnChangeTextFieldData {
   newValue: string;
-  keyToChange: "fr" | "en" | "de" | "pt" | "key" | "es";
+  keyToChange: "fr" | "en" | "de" | "pt" | "name" | "es";
 }
 
 interface Props {
   row: {
-    fr: string ;
-    en: string ;
-    de: string ;
-    es: string ;
-    pt: string ;
-    key: string ;
+    fr: string;
+    en: string;
+    de: string;
+    es: string;
+    pt: string;
+    name: string;
   };
   onDeleteRow: () => void;
   onChangeTextField: (data: OnChangeTextFieldData) => void;
@@ -32,14 +32,19 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
         }}
         marginTop="1rem"
         marginBottom="5rem"
+        position="relative"
       >
         <TextField
-          id="outlined-select-currency"
-          style={{ width: 200, marginLeft: "0.5rem" }}
-          value={row.key}
+          style={{
+            width: 250,
+            marginLeft: "2rem",
+            marginTop: "3rem",
+            position: "absolute",
+          }}
+          value={row.name}
           color="warning"
           placeholder="key name"
-          name={"key"}
+          name={"name"}
           onChange={(e) => {
             // Force cast the value, but can crash in runtime
             let name = e.target.name as
@@ -47,7 +52,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
               | "en"
               | "de"
               | "pt"
-              | "key"
+              | "name"
               | "es";
             onChangeTextField({
               newValue: e.target.value,
@@ -56,8 +61,12 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
         />
         <TextField
-          id="outlined-select-currency"
-          style={{ width: 200, marginLeft: "2rem" }}
+          style={{
+            width: 250,
+            marginLeft: "20.3rem",
+            marginTop: "3rem",
+            position: "absolute",
+          }}
           color="warning"
           value={row.en}
           placeholder="English"
@@ -69,7 +78,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
               name === "en" ||
               name === "de" ||
               name === "pt" ||
-              name === "key" ||
+              name === "name" ||
               name === "es"
             ) {
               onChangeTextField({
@@ -80,8 +89,12 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
         />
         <TextField
-          id="outlined-select-currency"
-          style={{ width: 200, marginLeft: "2rem" }}
+          style={{
+            width: 250,
+            marginLeft: "38.2rem",
+            marginTop: "3rem",
+            position: "absolute",
+          }}
           value={row.fr}
           color="warning"
           placeholder="Français"
@@ -95,9 +108,13 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
         />
         <TextField
-          id="outlined-select-currency"
           value={row.es}
-          style={{ width: 200, marginLeft: "2rem" }}
+          style={{
+            width: 250,
+            marginLeft: "56rem",
+            marginTop: "3rem",
+            position: "absolute",
+          }}
           color="warning"
           placeholder="Español"
           name={"es"}
@@ -110,8 +127,12 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
         />
         <TextField
-          id="outlined-select-currency"
-          style={{ width: 200, marginLeft: "2rem" }}
+          style={{
+            width: 250,
+            marginLeft: "74rem",
+            marginTop: "3rem",
+            position: "absolute",
+          }}
           color="warning"
           placeholder="Deutsche"
           name={"de"}
@@ -124,8 +145,12 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
         />
         <TextField
-          id="outlined-select-currency"
-          style={{ width: 200, marginLeft: "2rem" }}
+          style={{
+            width: 250,
+            marginLeft: "92rem",
+            marginTop: "3rem",
+            position: "absolute",
+          }}
           color="warning"
           placeholder="Português"
           value={row.pt}
@@ -140,10 +165,14 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
         <DeleteIcon
           onClick={onDeleteRow}
           color="action"
-          style={{ cursor: "pointer" }}
+          style={{
+            cursor: "pointer",
+            position: "absolute",
+            marginLeft: "112rem",
+            marginTop: "3rem",
+          }}
         />
       </Box>
-      <Divider variant="fullWidth" />
     </>
   );
 };

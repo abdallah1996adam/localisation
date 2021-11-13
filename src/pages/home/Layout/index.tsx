@@ -54,13 +54,25 @@ const Layout: React.FC<Props> = ({ keys, addNewKey }) => {
         >
           <TableHead>
             <TableRow style={{ border: "2px solid black" }}>
-              <TableCell>Key</TableCell>
-              <TableCell align="left">English</TableCell>
-              <TableCell align="left">Français</TableCell>
-              <TableCell align="left">Español</TableCell>
-              <TableCell align="left">Deutsche</TableCell>
-              <TableCell align="left">Português</TableCell>
-              <TableCell align="left">Action</TableCell>
+              <TableCell style={{ width: "17%" }}> Key</TableCell>
+              <TableCell style={{ width: "15%" }} align="left">
+                English
+              </TableCell>
+              <TableCell style={{ width: "15%" }} align="left">
+                Français
+              </TableCell>
+              <TableCell style={{ width: "15%" }} align="left">
+                Español
+              </TableCell>
+              <TableCell style={{ width: "15%" }} align="left">
+                Deutsche
+              </TableCell>
+              <TableCell style={{ width: "15%" }} align="left">
+                Português
+              </TableCell>
+              <TableCell style={{ width: "5%" }} align="left">
+                Action
+              </TableCell>
             </TableRow>
           </TableHead>
         </Table>

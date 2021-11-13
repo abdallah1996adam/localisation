@@ -5,7 +5,7 @@ interface ITranslationKey {
   de: string;
   es: string;
   pt: string;
-  key: string;
+  name: string;
 }
 
 type GlobalState = {
@@ -21,11 +21,22 @@ type DeleteKeyAction = {
   keyIndex: number;
 };
 
-type ModifyKeyAction = {
+type ModifyKeyValueAction = {
   type: string;
-  keyIndex: number;
+  index: number
+  data:{
+    fr: string;
+    en: string;
+    de: string;
+    es: string;
+    pt: string;
+    name: string;
+  }
 };
 
-type ITranslationKeyAction = AddKeyAction | DeleteKeyAction | ModifyKeyAction;
+type ITranslationKeyAction =
+  | AddKeyAction
+  | DeleteKeyAction
+  | ModifyKeyValueAction;
 
 type DispatchType = (args: ITranslationKeyAction) => ITranslationKeyAction;

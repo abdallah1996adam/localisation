@@ -16,10 +16,11 @@ export const deleteKey = (index: number) => {
   return handleKey(action);
 };
 
-export const modifyKey = (index: number) => {
-  const action: ModifyKeyAction = {
+export const modifyKey = (index: number, data: ITranslationKey) => {
+  const action: ModifyKeyValueAction = {
     type: ActionTypes.MODIFYKEY,
-    keyIndex: index,
+    index: index,
+    data
   };
   return handleKey(action);
 };

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "./Layout";
-import { deleteKey } from "../../state/actionCreators";
+import { deleteKey, modifyKey } from "../../state/actionCreators";
 
 type Props = {
   keyIndex: number;
@@ -16,12 +16,27 @@ const KeyDisplay: React.FC<Props> = ({ keyIndex }) => {
     dispatch(deleteKey(keyIndex));
   }, [dispatch, keyIndex]);
 
+  const updateRow = React.useCallback(
+    (data, keyIndex) => {
+      console.log(data);
+
+      dispatch(modifyKey(keyIndex, data));
+    },
+    [dispatch]
+  );
+ 
+
+
   return (
     <Layout
       row={key}
       onDeleteRow={removeRow}
       onChangeTextField={({ newValue, keyToChange }) => {
-        // insert action to update the key
+        let newDataKey = {
+          ...key,
+          [keyToChange]: newValue
+        };
+        updateRow(newDataKey, keyIndex);
       }}
     />
   );
