@@ -18,7 +18,6 @@ const KeyDisplay: React.FC<Props> = ({ keyIndex }) => {
 
   const updateRow = React.useCallback(
     (data, keyIndex) => {
-      console.log(data);
 
       dispatch(modifyKey(keyIndex, data));
     },

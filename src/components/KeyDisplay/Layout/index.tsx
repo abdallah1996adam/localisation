@@ -41,7 +41,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
             marginTop: "3rem",
             position: "absolute",
           }}
-          value={row.name}
+          value={row?.name}
           color="warning"
           placeholder="key name"
           name={"name"}
@@ -68,7 +68,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
             position: "absolute",
           }}
           color="warning"
-          value={row.en}
+          value={row?.en}
           placeholder="English"
           name={"en"}
           onChange={(e) => {
@@ -95,7 +95,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
             marginTop: "3rem",
             position: "absolute",
           }}
-          value={row.fr}
+          value={row?.fr}
           color="warning"
           placeholder="Français"
           name={"fr"}
@@ -108,7 +108,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
         />
         <TextField
-          value={row.es}
+          value={row?.es}
           style={{
             width: 250,
             marginLeft: "56rem",
@@ -136,7 +136,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           color="warning"
           placeholder="Deutsche"
           name={"de"}
-          value={row.de}
+          value={row?.de}
           onChange={(e) => {
             onChangeTextField({
               newValue: e.target.value,
@@ -153,7 +153,7 @@ const Layout: React.FC<Props> = ({ row, onDeleteRow, onChangeTextField }) => {
           }}
           color="warning"
           placeholder="Português"
-          value={row.pt}
+          value={row?.pt}
           name={"pt"}
           onChange={(e) => {
             onChangeTextField({
